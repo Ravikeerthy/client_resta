@@ -1,4 +1,5 @@
 import { Routes, Route, Navigate } from "react-router-dom";
+import HomePage from "../pages/customer/HomePage"
 import LoginPage from "../pages/auth/LoginPage";
 import RegisterPage from "../pages/auth/RegisterPage";
 import MenuPage from "../pages/customer/MenuPage";
@@ -12,11 +13,13 @@ import TableManagementPage from "../pages/admin/TableManagementPage";
 import MenuManagementPage from "../pages/admin/MenuManagementPage";
 import RoleRoute from "../components/common/RoleRoute";
 import KitchenPage from "../pages/kitchen/KitchenPage";
+import StaffManagementPage from "../pages/admin/StaffManagementPage";
+
 
 const AppRoutes = () => {
   return (
     <Routes>
-      <Route path="/" element={<Navigate to="/menu" replace />} />
+      <Route path="/" element={<HomePage />} />
       <Route path="/menu" element={<MenuPage />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/register" element={<RegisterPage />} />
@@ -48,7 +51,7 @@ const AppRoutes = () => {
         }
       />
 
-       <Route
+      <Route
         path="/admin"
         element={
           <RoleRoute allowedRoles={["admin"]}>
@@ -66,7 +69,7 @@ const AppRoutes = () => {
         }
       />
 
-    <Route
+      <Route
         path="/admin/tables"
         element={
           <RoleRoute allowedRoles={["admin"]}>
@@ -75,7 +78,7 @@ const AppRoutes = () => {
         }
       />
 
-        <Route
+      <Route
         path="/admin/menu"
         element={
           <RoleRoute allowedRoles={["admin"]}>
@@ -83,7 +86,7 @@ const AppRoutes = () => {
           </RoleRoute>
         }
       />
-     <Route
+      <Route
         path="/kitchen"
         element={
           <RoleRoute allowedRoles={["admin", "kitchen"]}>
@@ -92,8 +95,15 @@ const AppRoutes = () => {
         }
       />
 
+      <Route
+        path="/admin/staff"
+        element={
+          <RoleRoute allowedRoles={["admin"]}>
+            <StaffManagementPage />
+          </RoleRoute>
+        }
+      />
     </Routes>
-
   );
 };
 

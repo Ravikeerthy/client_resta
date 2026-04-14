@@ -1,9 +1,9 @@
-import { Box, Button, Card, CardContent, Container, TextField, Typography } from "@mui/material";
+import { Alert, Box, Button, Card, CardContent, TextField, Typography } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { useAuth } from "../../context/AuthContext";
-import { Alert } from "@mui/material";
+import AuthSplitLayout from "../../components/layout/AuthSplitLayout";
 
 const validationSchema = Yup.object({
   name: Yup.string()
@@ -48,8 +48,7 @@ const RegisterPage = () => {
       } catch (error) {
         console.error("Registration failed:", error);
         setStatus(
-          error?.response?.data?.message ||
-            "Registration failed. Please try again."
+          error?.response?.data?.message || "Registration failed. Please try again."
         );
       } finally {
         setSubmitting(false);
@@ -58,98 +57,92 @@ const RegisterPage = () => {
   });
 
   return (
-    <Container maxWidth="sm">
-      <Box sx={{ minHeight: "100vh", display: "grid", placeItems: "center" }}>
-        <Card sx={{ width: "100%", maxWidth: 500, borderRadius: 4, boxShadow: 3 }}>
-          <CardContent sx={{ p: 4 }}>
-            <Typography variant="h4" gutterBottom>
-              Create Account
-            </Typography>
-            <Typography variant="body2" color="text.secondary" sx={{ mb: 3 }}>
-              Create your restaurant dashboard account.
-            </Typography>
+    <AuthSplitLayout
+      title="Create account"
+      subtitle="Register as a customer to explore menu items and place orders."
+    >
+      <Card sx={{ borderRadius: 5, boxShadow: "0 14px 36px rgba(0,0,0,0.08)" }}>
+        <CardContent sx={{ p: 4 }}>
+          <Box component="form" onSubmit={formik.handleSubmit} noValidate>
+            <TextField
+              fullWidth
+              margin="normal"
+              label="Full Name"
+              name="name"
+              value={formik.values.name}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              error={formik.touched.name && Boolean(formik.errors.name)}
+              helperText={formik.touched.name && formik.errors.name}
+            />
 
-            <Box component="form" onSubmit={formik.handleSubmit} noValidate>
-              <TextField
-                fullWidth
-                margin="normal"
-                label="Full Name"
-                name="name"
-                value={formik.values.name}
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                error={formik.touched.name && Boolean(formik.errors.name)}
-                helperText={formik.touched.name && formik.errors.name}
-              />
+            <TextField
+              fullWidth
+              margin="normal"
+              label="Email"
+              name="email"
+              type="email"
+              value={formik.values.email}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              error={formik.touched.email && Boolean(formik.errors.email)}
+              helperText={formik.touched.email && formik.errors.email}
+            />
 
-              <TextField
-                fullWidth
-                margin="normal"
-                label="Email"
-                name="email"
-                type="email"
-                value={formik.values.email}
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                error={formik.touched.email && Boolean(formik.errors.email)}
-                helperText={formik.touched.email && formik.errors.email}
-              />
+            <TextField
+              fullWidth
+              margin="normal"
+              label="Password"
+              name="password"
+              type="password"
+              value={formik.values.password}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              error={formik.touched.password && Boolean(formik.errors.password)}
+              helperText={formik.touched.password && formik.errors.password}
+            />
 
-              <TextField
-                fullWidth
-                margin="normal"
-                label="Password"
-                name="password"
-                type="password"
-                value={formik.values.password}
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                error={formik.touched.password && Boolean(formik.errors.password)}
-                helperText={formik.touched.password && formik.errors.password}
-              />
+            <TextField
+              fullWidth
+              margin="normal"
+              label="Confirm Password"
+              name="confirmPassword"
+              type="password"
+              value={formik.values.confirmPassword}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              error={
+                formik.touched.confirmPassword &&
+                Boolean(formik.errors.confirmPassword)
+              }
+              helperText={
+                formik.touched.confirmPassword && formik.errors.confirmPassword
+              }
+            />
 
-              <TextField
-                fullWidth
-                margin="normal"
-                label="Confirm Password"
-                name="confirmPassword"
-                type="password"
-                value={formik.values.confirmPassword}
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                error={
-                  formik.touched.confirmPassword &&
-                  Boolean(formik.errors.confirmPassword)
-                }
-                helperText={
-                  formik.touched.confirmPassword && formik.errors.confirmPassword
-                }
-              />
+            {formik.status && (
+              <Alert severity="error" sx={{ mt: 2 }}>
+                {formik.status}
+              </Alert>
+            )}
 
-              {formik.status && (
-                <Typography color="error" variant="body2" sx={{ mt: 1 }}>
-                  {formik.status}
-                </Typography>
-              )}
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              sx={{ mt: 3, py: 1.3 }}
+              disabled={formik.isSubmitting}
+            >
+              {formik.isSubmitting ? "Creating Account..." : "Create Account"}
+            </Button>
+          </Box>
 
-              <Button
-                type="submit"
-                fullWidth
-                variant="contained"
-                sx={{ mt: 3, py: 1.2 }}
-                disabled={formik.isSubmitting}
-              >
-                {formik.isSubmitting ? "Creating Account..." : "Create Account"}
-              </Button>
-            </Box>
-
-            <Typography sx={{ mt: 3 }} variant="body2">
-              Already have an account? <Link to="/login">Login</Link>
-            </Typography>
-          </CardContent>
-        </Card>
-      </Box>
-    </Container>
+          <Typography sx={{ mt: 3 }} variant="body2">
+            Already have an account? <Link to="/login">Login</Link>
+          </Typography>
+        </CardContent>
+      </Card>
+    </AuthSplitLayout>
   );
 };
 

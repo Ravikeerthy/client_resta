@@ -101,7 +101,7 @@ const OrderManagementPage = () => {
       });
 
       if (status === "completed" || status === "cancelled") {
-        fetchOrders();
+       await fetchOrders();
       }
     } catch (err) {
       console.error("Failed to update order status:", err);

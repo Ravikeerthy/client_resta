@@ -14,7 +14,7 @@ const RoleRoute = ({ children, allowedRoles = [] }) => {
   }
 
   if (!token) {
-    return <Navigate to="/login" replace />;
+    return <Navigate to="/" replace />;
   }
 
   if (!allowedRoles.includes(user?.role)) {

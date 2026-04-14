@@ -18,12 +18,12 @@ const navLinkStyles = {
 const MainNavbar = () => {
   const { isAuthenticated, logout, user } = useAuth();
   console.log("NavBar User: ", user);
-  
+
   const navigate = useNavigate();
 
   const handleLogout = () => {
     logout();
-    navigate("/login");
+    navigate("/");
   };
 
   const isCustomer = user?.role === "customer";
@@ -58,7 +58,7 @@ const MainNavbar = () => {
           >
             <RestaurantMenuIcon color="primary" />
             <Typography variant="h6" sx={{ fontWeight: 800 }}>
-              SpiceBoard
+              Keerthy&apos;s Kitchen
             </Typography>
           </Box>
 
@@ -95,7 +95,11 @@ const MainNavbar = () => {
             ) : (
               <>
                 {isCustomer && (
-                  <Button component={RouterLink} to="/orders" sx={navLinkStyles}>
+                  <Button
+                    component={RouterLink}
+                    to="/orders"
+                    sx={navLinkStyles}
+                  >
                     Orders
                   </Button>
                 )}
@@ -105,7 +109,11 @@ const MainNavbar = () => {
                     <Button component={RouterLink} to="/pos" sx={navLinkStyles}>
                       POS
                     </Button>
-                    <Button component={RouterLink} to="/orders" sx={navLinkStyles}>
+                    <Button
+                      component={RouterLink}
+                      to="/orders"
+                      sx={navLinkStyles}
+                    >
                       Orders
                     </Button>
                   </>
@@ -116,7 +124,11 @@ const MainNavbar = () => {
                     <Button component={RouterLink} to="/pos" sx={navLinkStyles}>
                       POS
                     </Button>
-                    <Button component={RouterLink} to="/admin" sx={navLinkStyles}>
+                    <Button
+                      component={RouterLink}
+                      to="/admin"
+                      sx={navLinkStyles}
+                    >
                       Dashboard
                     </Button>
                     <Button
@@ -140,14 +152,29 @@ const MainNavbar = () => {
                     >
                       Manage Menu
                     </Button>
-                    <Button component={RouterLink} to="/kitchen" sx={navLinkStyles}>
+                    <Button
+                      component={RouterLink}
+                      to="/kitchen"
+                      sx={navLinkStyles}
+                    >
                       Kitchen
+                    </Button>
+                    <Button
+                      component={RouterLink}
+                      to="/admin/staff"
+                      sx={navLinkStyles}
+                    >
+                      Manage Staff
                     </Button>
                   </>
                 )}
 
                 {isKitchen && (
-                  <Button component={RouterLink} to="/kitchen" sx={navLinkStyles}>
+                  <Button
+                    component={RouterLink}
+                    to="/kitchen"
+                    sx={navLinkStyles}
+                  >
                     Kitchen
                   </Button>
                 )}
