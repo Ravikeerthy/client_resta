@@ -1,12 +1,12 @@
 import { Box, Container } from "@mui/material";
 import MainNavbar from "./MainNavbar";
-import SmokeBackground from "../common/SmokeBackGround";
+import SmokeBackGround from "../common/SmokeBackgrounds";
 
 const DashboardLayout = ({ children }) => {
   return (
     <>
       <MainNavbar />
-      <SmokeBackground>
+      <SmokeBackGround>
       <Box
         sx={{
           minHeight: "100vh",
@@ -17,7 +17,7 @@ const DashboardLayout = ({ children }) => {
       >
         <Container maxWidth="xl">{children}</Container>
       </Box>
-      </SmokeBackground>
+      </SmokeBackGround>
     </>
   );
 };

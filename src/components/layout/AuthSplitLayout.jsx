@@ -1,6 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import registerImage from "../../assets/food.png"
-import SmokeBackGround from "../common/SmokeBackGround";
+import SmokeBackGround from "../common/SmokeBackgrounds";
+
 
 const authImage = registerImage
 
