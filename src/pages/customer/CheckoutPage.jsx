@@ -20,9 +20,9 @@ import {
 import { useNavigate } from "react-router-dom";
 import { useCart } from "../../context/CartContext";
 import { createOrder } from "../../api/orderApi";
-import SmokeBackGround from "../../components/common/SmokeBackGround";
-// import MainNavBar from "../../components/layout/MainNavBar";
-import MainNavBar from "../../components/layout/MainNavBar";
+import MainNavBar from "../../components/layout/MainNavBars";
+import SmokeBackGround from "../../components/common/SmokeBackgrounds";
+
 
 const CheckoutPage = () => {
   const navigate = useNavigate();
@@ -403,7 +403,8 @@ const CheckoutPage = () => {
             </Grid>
           </Container>
         </Box>
-      </SmokeBackGround>
+        </SmokeBackGround>
+      
 
       <Snackbar
         open={snackbar.open}

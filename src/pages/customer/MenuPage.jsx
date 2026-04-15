@@ -13,8 +13,9 @@ import {
 import MenuCard from "../../components/menu/MenuCard";
 import { getAllMenuItems } from "../../api/menuApi";
 import { useCart } from "../../context/CartContext";
-import SmokeBackGround from "../../components/common/SmokeBackGround";
-import MainNavBar from "../../components/layout/MainNavBar";
+import MainNavBar from "../../components/layout/MainNavBars";
+import SmokeBackGround from "../../components/common/SmokeBackgrounds";
+
 
 const MenuPage = () => {
   const [menuItems, setMenuItems] = useState([]);
@@ -66,6 +67,7 @@ const MenuPage = () => {
     <>
     <MainNavBar />
     <SmokeBackGround>
+   
       <Box
         sx={{
           background:
