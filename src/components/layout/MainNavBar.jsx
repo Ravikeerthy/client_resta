@@ -15,7 +15,7 @@ const navLinkStyles = {
   textDecoration: "none",
 };
 
-const MainNavbar = () => {
+const MainNavBar = () => {
   const { isAuthenticated, logout, user } = useAuth();
   console.log("NavBar User: ", user);
 
@@ -195,4 +195,4 @@ const MainNavbar = () => {
   );
 };
 
-export default MainNavbar;
+export default MainNavBar;

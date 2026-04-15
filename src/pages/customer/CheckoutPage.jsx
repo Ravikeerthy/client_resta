@@ -18,10 +18,10 @@ import {
   Typography,
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import MainNavbar from "../../components/layout/MainNavbar";
 import { useCart } from "../../context/CartContext";
 import { createOrder } from "../../api/orderApi";
 import SmokeBackground from "../../components/common/SmokeBackGround";
+import MainNavBar from "../../components/layout/MainNavBar";
 
 const CheckoutPage = () => {
   const navigate = useNavigate();
@@ -137,7 +137,7 @@ const CheckoutPage = () => {
 
   return (
     <>
-      <MainNavbar />
+      <MainNavBar />
       <SmokeBackground>
         <Box
           sx={{
