@@ -137,7 +137,7 @@ const CheckoutPage = () => {
 
   return (
     <>
-      <MainNavBar />
+    <MainNavBar />
       <SmokeBackGround>
         <Box
           sx={{

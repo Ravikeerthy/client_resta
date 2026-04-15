@@ -22,8 +22,8 @@ import LocationOnRoundedIcon from "@mui/icons-material/LocationOnRounded";
 // import StarRoundedIcon from "@mui/icons-material/StarRounded";
 import Footer from "../../components/layout/Footer";
 import { Link as RouterLink } from "react-router-dom";
-import MainNavBar from "../../components/layout/MainNavBar";
 import SmokeBackGround from "../../components/common/SmokeBackGround";
+import MainNavBar from "../../components/layout/MainNavBar";
 
 const heroSlides = [
   {
@@ -170,8 +170,7 @@ const HomePage = () => {
 
   return (
     <>
-      <MainNavBar />
-
+     <MainNavBar />
       <SmokeBackGround>
         <Box sx={{ pb: 8 }}>
           <Box
