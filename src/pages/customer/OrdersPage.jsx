@@ -14,7 +14,7 @@ import {
 } from "@mui/material";
 // import MainNavbar from "../../components/layout/MainNavbar";
 import { getAllOrders } from "../../api/orderApi";
-import SmokeBackground from "../../components/common/SmokeBackGround";
+import SmokeBackGround from "../../components/common/SmokeBackGround";
 import MainNavBar from "../../components/layout/MainNavBar";
 
 const getStatusColor = (status) => {
@@ -73,7 +73,7 @@ const OrdersPage = () => {
   return (
     <>
       <MainNavBar />
-      <SmokeBackground>
+      <SmokeBackGround>
         <Box
           sx={{
             minHeight: "100vh",
@@ -284,7 +284,7 @@ const OrdersPage = () => {
             )}
           </Container>
         </Box>
-      </SmokeBackground>
+      </SmokeBackGround>
     </>
   );
 };

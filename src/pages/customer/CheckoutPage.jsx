@@ -20,7 +20,7 @@ import {
 import { useNavigate } from "react-router-dom";
 import { useCart } from "../../context/CartContext";
 import { createOrder } from "../../api/orderApi";
-import SmokeBackground from "../../components/common/SmokeBackGround";
+import SmokeBackGround from "../../components/common/SmokeBackGround";
 import MainNavBar from "../../components/layout/MainNavBar";
 
 const CheckoutPage = () => {
@@ -138,7 +138,7 @@ const CheckoutPage = () => {
   return (
     <>
       <MainNavBar />
-      <SmokeBackground>
+      <SmokeBackGround>
         <Box
           sx={{
             minHeight: "100vh",
@@ -402,7 +402,7 @@ const CheckoutPage = () => {
             </Grid>
           </Container>
         </Box>
-      </SmokeBackground>
+      </SmokeBackGround>
 
       <Snackbar
         open={snackbar.open}
