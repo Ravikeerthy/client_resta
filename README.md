@@ -1,16 +1,160 @@
-# React + Vite
+# Keerthy's Kitchen Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![React](https://img.shields.io/badge/React-19-blue)
+![Vite](https://img.shields.io/badge/Vite-Frontend-purple)
+![Material UI](https://img.shields.io/badge/MUI-UI-blue)
+![Stripe](https://img.shields.io/badge/Stripe-Payments-indigo)
 
-Currently, two official plugins are available:
+## Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Keerthy's Kitchen frontend is a modern restaurant web application built with React, Vite, and Material UI. It supports customer ordering, waiter POS operations, kitchen workflow, admin pages, and Stripe payment integration.
 
-## React Compiler
+## Live Demo
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Add your deployed frontend URL here.
 
-## Expanding the ESLint configuration
+```text
+https://keerthyrestaurantportfolio.netlify.app/
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Screenshots
+
+Add screenshots here after upload.
+
+```text
+/screenshots/homepage.png
+/screenshots/menu.png
+/screenshots/pos.png
+/screenshots/admin-dashboard.png
+/screenshots/kitchen.png
+```
+
+## Features
+
+| Module | Features |
+|---|---|
+| Customer | Home page, menu, checkout, orders, login, register |
+| Waiter | POS, create orders, manage payments |
+| Kitchen | View active orders, preparing, served |
+| Admin | Dashboard, orders, menu, tables, staff |
+| Payments | Stripe online/card flow |
+
+## Tech Stack
+
+- React
+- Vite
+- Material UI
+- React Router DOM
+- Axios
+- Formik
+- Yup
+- Stripe React SDK
+
+## Project Structure
+
+```text
+src/
+  api/
+  components/
+    common/
+    layout/
+    menu/
+    payment/
+    pos/
+  context/
+  pages/
+    admin/
+    auth/
+    customer/
+    kitchen/
+    pos/
+  routes/
+  App.jsx
+  main.jsx
+```
+
+## Environment Variables
+
+Create a `.env` file in the frontend root.
+
+```env
+VITE_API_URL=https://your-backend-domain/api
+VITE_STRIPE_PUBLISHABLE_KEY=your_stripe_publishable_key
+```
+
+## Installation
+
+```bash
+npm install
+npm run dev
+```
+
+## Build
+
+```bash
+npm run build
+```
+
+## Deployment
+
+### Netlify
+Use these settings if the app is inside `client_resta`:
+
+```text
+Base directory: client_resta
+Build command: npm run build
+Publish directory: dist
+Functions directory: [leave empty]
+```
+
+Add these environment variables in Netlify:
+- `VITE_API_URL`
+- `VITE_STRIPE_PUBLISHABLE_KEY`
+
+## API Setup
+
+```js
+import axios from "axios";
+
+const api = axios.create({
+  baseURL: import.meta.env.VITE_API_URL,
+});
+
+api.interceptors.request.use((config) => {
+  const token = localStorage.getItem("token");
+  if (token) {
+    config.headers.Authorization = `Bearer ${token}`;
+  }
+  return config;
+});
+
+export default api;
+```
+
+## Routes
+
+### Public
+- `/`
+- `/menu`
+- `/login`
+- `/register`
+
+### Protected / Role-Based
+- `/checkout`
+- `/orders`
+- `/pos`
+- `/admin`
+- `/admin/orders`
+- `/admin/tables`
+- `/admin/menu`
+- `/admin/staff`
+- `/kitchen`
+
+## Roles
+
+- `customer`
+- `waiter`
+- `kitchen`
+- `admin`
+
+
