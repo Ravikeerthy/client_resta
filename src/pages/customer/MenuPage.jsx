@@ -13,8 +13,9 @@ import {
 import MenuCard from "../../components/menu/MenuCard";
 import { getAllMenuItems } from "../../api/menuApi";
 import { useCart } from "../../context/CartContext";
-import MainNavBar from "../../components/layout/MainNavBars";
-import SmokeBackGround from "../../components/common/SmokeBackgrounds";
+import MainNavBar from "../../components/layout/MainNavBar";
+import SmokeBackGround from "../../components/common/SmokeBackGround";
+
 
 
 const MenuPage = () => {
@@ -66,8 +67,7 @@ const MenuPage = () => {
   return (
     <>
     <MainNavBar />
-    <SmokeBackGround>
-   
+    <SmokeBackGround>   
       <Box
         sx={{
           background:

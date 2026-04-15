@@ -14,8 +14,9 @@ import {
 } from "@mui/material";
 
 import { getAllOrders } from "../../api/orderApi";
-import MainNavBar from "../../components/layout/MainNavBars";
-import SmokeBackGround from "../../components/common/SmokeBackgrounds";
+import MainNavBar from "../../components/layout/MainNavBar";
+import SmokeBackGround from "../../components/common/SmokeBackGround";
+
 
 
 const getStatusColor = (status) => {
@@ -72,9 +73,9 @@ const OrdersPage = () => {
   }, []);
 
   return (
-    <>
-     <MainNavBar />
-     <SmokeBackGround>
+    <> 
+    <MainNavBar />
+    <SmokeBackGround>    
         <Box
           sx={{
             minHeight: "100vh",
