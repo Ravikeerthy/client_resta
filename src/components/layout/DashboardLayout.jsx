@@ -1,12 +1,12 @@
 import { Box, Container } from "@mui/material";
-import MainNavBar from "./MainNavBars";
 import SmokeBackGround from "../common/SmokeBackgrounds";
+import MainNavBar from "./MainNavBars";
 
 
 const DashboardLayout = ({ children }) => {
   return (
     <>
-      <MainNavBar />
+    <MainNavBar />
       <SmokeBackGround>
       <Box
         sx={{
