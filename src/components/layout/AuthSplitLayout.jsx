@@ -1,12 +1,12 @@
 import { Box, Typography } from "@mui/material";
-import SmokeBackground from "../common/SmokeBackground";
 import registerImage from "../../assets/food.png"
+import SmokeBackGround from "../common/SmokeBackGround";
 
 const authImage = registerImage
 
 const AuthSplitLayout = ({ title, subtitle, children }) => {
   return (
-    <SmokeBackground>
+    <SmokeBackGround>
       <Box
         sx={{
           minHeight: "100vh",
@@ -92,7 +92,7 @@ const AuthSplitLayout = ({ title, subtitle, children }) => {
           </Box>
         </Box>
       </Box>
-    </SmokeBackground>
+    </SmokeBackGround>
   );
 };
 

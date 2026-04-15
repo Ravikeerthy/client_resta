@@ -20,10 +20,10 @@ import AccessTimeRoundedIcon from "@mui/icons-material/AccessTimeRounded";
 import DeliveryDiningRoundedIcon from "@mui/icons-material/DeliveryDiningRounded";
 import LocationOnRoundedIcon from "@mui/icons-material/LocationOnRounded";
 // import StarRoundedIcon from "@mui/icons-material/StarRounded";
-import MainNavbar from "../../components/layout/MainNavbar";
 import Footer from "../../components/layout/Footer";
 import { Link as RouterLink } from "react-router-dom";
-import SmokeBackGround from "../../components/common/SmokeBackground";
+import MainNavBar from "../../components/layout/MainNavBar";
+import SmokeBackGround from "../../components/common/SmokeBackGround";
 
 const heroSlides = [
   {
@@ -170,7 +170,7 @@ const HomePage = () => {
 
   return (
     <>
-      <MainNavbar />
+      <MainNavBar />
 
       <SmokeBackGround>
         <Box sx={{ pb: 8 }}>

@@ -10,11 +10,11 @@ import {
   Tabs,
   Typography,
 } from "@mui/material";
-import MainNavbar from "../../components/layout/MainNavbar";
 import MenuCard from "../../components/menu/MenuCard";
 import { getAllMenuItems } from "../../api/menuApi";
 import { useCart } from "../../context/CartContext";
 import SmokeBackground from "../../components/common/SmokeBackGround";
+import MainNavBar from "../../components/layout/MainNavBar";
 
 const MenuPage = () => {
   const [menuItems, setMenuItems] = useState([]);
@@ -64,7 +64,7 @@ const MenuPage = () => {
 
   return (
     <>
-      <MainNavbar />
+    <MainNavBar />
     <SmokeBackground>
       <Box
         sx={{

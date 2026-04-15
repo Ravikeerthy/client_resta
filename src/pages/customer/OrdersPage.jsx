@@ -12,9 +12,10 @@ import {
   Stack,
   Typography,
 } from "@mui/material";
-import MainNavbar from "../../components/layout/MainNavbar";
+// import MainNavbar from "../../components/layout/MainNavbar";
 import { getAllOrders } from "../../api/orderApi";
 import SmokeBackground from "../../components/common/SmokeBackGround";
+import MainNavBar from "../../components/layout/MainNavBar";
 
 const getStatusColor = (status) => {
   switch (status) {
@@ -71,7 +72,7 @@ const OrdersPage = () => {
 
   return (
     <>
-      <MainNavbar />
+      <MainNavBar />
       <SmokeBackground>
         <Box
           sx={{
