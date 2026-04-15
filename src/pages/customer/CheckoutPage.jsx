@@ -21,6 +21,7 @@ import { useNavigate } from "react-router-dom";
 import { useCart } from "../../context/CartContext";
 import { createOrder } from "../../api/orderApi";
 import SmokeBackGround from "../../components/common/SmokeBackGround";
+// import MainNavBar from "../../components/layout/MainNavBar";
 import MainNavBar from "../../components/layout/MainNavBar";
 
 const CheckoutPage = () => {
